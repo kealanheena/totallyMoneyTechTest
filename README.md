@@ -15,8 +15,8 @@ E.G.
 |Customer Name|Recieves Material ...|
 |---|---|
 |A|Every day|
-|b|10th of every month|
-|c|Tuesdays and Fridays|
+|B|10th of every month|
+|C|Tuesdays and Fridays|
 
 The output would be:
 
