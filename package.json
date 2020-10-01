@@ -1,0 +1,26 @@
+{
+  "name": "totallyMoneyTechTest",
+  "version": "1.0.0",
+  "description": "## Challenge: Implement a Customer preference Centre",
+  "main": "test.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kealanheena/totallyMoneyTechTest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kealanheena/totallyMoneyTechTest/issues"
+  },
+  "homepage": "https://github.com/kealanheena/totallyMoneyTechTest#readme",
+  "devDependencies": {
+    "jest": "^26.4.2"
+  }
+}
