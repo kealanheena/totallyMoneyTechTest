@@ -20,18 +20,18 @@ E.G.
 
 The output would be:
 
-Sun 01-April-2018 A
-Mon 02-April-2018 A
-Tue 03-April-2018 A, C
-Wed 04-April-2018 A
-Thu 05-April-2018 A
-Fri 06-April-2018 A, C
-Sat 07-April-2018 A
-Sun 08-April-2018 A
-Mon 09-April-2018 A
-Tue 10-April-2018 A, B, C
-Wed 11-April-2018 A
-Thu 12-April-2018 A
-Fri 13-April-2018 A, C
-Sat 14-April-2018 A
-...
+- Sun 01-April-2018 A
+- Mon 02-April-2018 A
+- Tue 03-April-2018 A, C
+- Wed 04-April-2018 A
+- Thu 05-April-2018 A
+- Fri 06-April-2018 A, C
+- Sat 07-April-2018 A
+- Sun 08-April-2018 A
+- Mon 09-April-2018 A
+- Tue 10-April-2018 A, B, C
+- Wed 11-April-2018 A
+- Thu 12-April-2018 A
+- Fri 13-April-2018 A, C
+- Sat 14-April-2018 A
+- ...
