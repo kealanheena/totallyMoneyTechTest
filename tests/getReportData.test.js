@@ -82,6 +82,16 @@ describe('#getReportData', () => {
           }
         }], amountOfDays, startDate)).toEqual([`${firstDate} jess`, `${secondDate}`]);
       });
+
+      test('getReportData should take an array of objects and return an array of dates', () => {
+        expect(getReportData([{
+          name: 'jess', 
+          preference: { 
+            type: 'speciific day', 
+            days: ['Saturday', 'Sunday']
+          }
+        }], amountOfDays, startDate)).toEqual([`${firstDate} jess`, `${secondDate} jess`]);
+      });
     });
 
 
