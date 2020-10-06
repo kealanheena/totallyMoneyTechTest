@@ -1,5 +1,13 @@
 const getReportData = require('../lib/getReportData');
 
-test('Returns an array of dates with the names of the customers who are recieving the marketing material', () => {
+const firstDate = new Date('August 1, 2020 12:15:30').toDateString();
+const secondDate = new Date('August 2, 2020 12:15:30').toDateString();
+
+
+test('getReportData should be a function', () => {
   expect(getReportData).toBeInstanceOf(Function);
+});
+
+test('getReportData should be a function', () => {
+  expect(getReportData([], 1, new Date('August 1, 2020 12:15:30'))).toEqual([`${firstDate} `]);
 });
