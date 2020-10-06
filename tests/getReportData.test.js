@@ -22,7 +22,7 @@ describe('#getReportData', () => {
     });
 
     test('getReportData should return an array of dates', () => {
-      expect(getReportData([], amountOfDays, startDate)).toEqual([`${firstDate} `]);
+      expect(getReportData([], amountOfDays, startDate)).toEqual([`${firstDate}`]);
     });
     
     test('getReportData should take an array of objects and return an array of dates', () => {
@@ -50,7 +50,7 @@ describe('#getReportData', () => {
     });
 
     test('getReportData should return an array of subsequential dates', () => {
-      expect(getReportData([], amountOfDays, startDate)).toEqual([`${firstDate} `, `${secondDate} `]);
+      expect(getReportData([], amountOfDays, startDate)).toEqual([`${firstDate}`, `${secondDate}`]);
     });
 
     describe('when the customers Preference is Everyday', () => {
@@ -73,7 +73,7 @@ describe('#getReportData', () => {
     });
 
     describe('when the customers Preference is Specific days of the week', () => {
-      test('getReportData should take an array of objects and return an array of dates', () => {
+      test('getReportData should only add the customers name to dates on that day', () => {
         expect(getReportData([{
           name: 'jess', 
           preference: { 
@@ -83,7 +83,7 @@ describe('#getReportData', () => {
         }], amountOfDays, startDate)).toEqual([`${firstDate} jess`, `${secondDate}`]);
       });
 
-      test('getReportData should take an array of objects and return an array of dates', () => {
+      test('getReportData should also work if there are Multiple dates in the array', () => {
         expect(getReportData([{
           name: 'jess', 
           preference: { 
@@ -92,9 +92,18 @@ describe('#getReportData', () => {
           }
         }], amountOfDays, startDate)).toEqual([`${firstDate} jess`, `${secondDate} jess`]);
       });
+
+      test('getReportData should also work if one of the days don\'t appear in the data', () => {
+        expect(getReportData([{
+          name: 'jess', 
+          preference: { 
+            type: 'speciific day', 
+            days: ['Monday', 'Sunday']
+          }
+        }], amountOfDays, startDate)).toEqual([`${firstDate}`, `${secondDate} jess`]);
+      });
+
     });
-
-
     
   });
 
