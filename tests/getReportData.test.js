@@ -155,7 +155,7 @@ describe('#getReportData', () => {
     });
 
     describe('when each of the customers preference are different', () => {
-      it('should only add the customers name to dates in prefernces dates', () => {
+      it('should only add the customers name to days/dates in their prefernces', () => {
         expect(getReportData([{
           name: 'jess', 
           preference: { 
@@ -175,6 +175,28 @@ describe('#getReportData', () => {
             days: ['Sunday']
           }
         }], amountOfDays, startDate)).toEqual([`${firstDate} jess, kerry`, `${secondDate} kerry, ted`]);
+      });
+
+      it('should only add the customers name to dates in prefernces dates', () => {
+        expect(getReportData([{
+          name: 'jess', 
+          preference: { 
+            type: 'date', 
+            dates: [1]
+          }
+        }, {
+          name: 'kerry', 
+          preference: { 
+            type: 'never', 
+          },
+        },
+        {
+          name: 'ted',
+          preference: { 
+            type: 'day', 
+            days: ['Sunday']
+          }
+        }], amountOfDays, startDate)).toEqual([`${firstDate} jess`, `${secondDate} ted`]);
       });
 
     });
