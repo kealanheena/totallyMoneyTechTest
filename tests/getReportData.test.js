@@ -8,6 +8,10 @@ test('getReportData should be a function', () => {
   expect(getReportData).toBeInstanceOf(Function);
 });
 
-test('getReportData should be a function', () => {
+test('getReportData should return an array of dates', () => {
   expect(getReportData([], 1, new Date('August 1, 2020 12:15:30'))).toEqual([`${firstDate} `]);
+});
+
+test('getReportData should take an array of object and return an array of dates', () => {
+  expect(getReportData([{name: 'jess', preference: 'everyday'}], 1, new Date('August 1, 2020 12:15:30'))).toEqual([`${firstDate} jess`]);
 });
