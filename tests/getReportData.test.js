@@ -77,7 +77,7 @@ describe('#getReportData', () => {
         expect(getReportData([{
           name: 'jess', 
           preference: { 
-            type: 'speciific day', 
+            type: 'day', 
             days: ['Saturday']
           }
         }], amountOfDays, startDate)).toEqual([`${firstDate} jess`, `${secondDate}`]);
@@ -87,7 +87,7 @@ describe('#getReportData', () => {
         expect(getReportData([{
           name: 'jess', 
           preference: { 
-            type: 'speciific day', 
+            type: 'day', 
             days: ['Saturday', 'Sunday']
           }
         }], amountOfDays, startDate)).toEqual([`${firstDate} jess`, `${secondDate} jess`]);
@@ -97,10 +97,23 @@ describe('#getReportData', () => {
         expect(getReportData([{
           name: 'jess', 
           preference: { 
-            type: 'speciific day', 
+            type: 'day', 
             days: ['Monday', 'Sunday']
           }
         }], amountOfDays, startDate)).toEqual([`${firstDate}`, `${secondDate} jess`]);
+      });
+
+    });
+
+    describe('when the customers Preference is Specific days of the week', () => {
+      test('getReportData should only add the customers name to dates on that day', () => {
+        expect(getReportData([{
+          name: 'jess', 
+          preference: { 
+            type: 'date', 
+            dates: [1]
+          }
+        }], amountOfDays, startDate)).toEqual([`${firstDate} jess`, `${secondDate}`]);
       });
 
     });
