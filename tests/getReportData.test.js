@@ -28,8 +28,18 @@ describe('#getReportData', () => {
     test('getReportData should take an array of objects and return an array of dates', () => {
       expect(getReportData([{
         name: 'jess', 
-        preference: 'everyday'
+        preference: { type: 'everyday' }
       }], amountOfDays, startDate)).toEqual([`${firstDate} jess`]);
+    });
+
+    test('getReportData should return dates with multiple names if there is multiple customer inputs', () => {
+      expect(getReportData([{
+        name: 'jess', 
+        preference: { type: 'everyday' }
+      }, {
+        name: 'ted', 
+        preference: { type: 'everyday' }
+      }], amountOfDays, startDate)).toEqual([`${firstDate} jess, ted`]);
     });
   });
 
@@ -43,22 +53,38 @@ describe('#getReportData', () => {
       expect(getReportData([], amountOfDays, startDate)).toEqual([`${firstDate} `, `${secondDate} `]);
     });
 
-    test('getReportData should take an array of objects and return an array of dates', () => {
-      expect(getReportData([{
-        name: 'jess', 
-        preference: 'everyday'
-      }], amountOfDays, startDate)).toEqual([`${firstDate} jess`, `${secondDate} jess`]);
+    describe('when the customers Preference is Everyday', () => {
+      test('getReportData should take an array of objects and return an array of dates', () => {
+        expect(getReportData([{
+          name: 'jess', 
+          preference: { type: 'everyday' }
+        }], amountOfDays, startDate)).toEqual([`${firstDate} jess`, `${secondDate} jess`]);
+      });
+  
+      test('getReportData should return dates with multiple names if there is multiple customer inputs', () => {
+        expect(getReportData([{
+          name: 'jess', 
+          preference: { type: 'everyday' }
+        }, {
+          name: 'ted', 
+          preference: { type: 'everyday' }
+        }], amountOfDays, startDate)).toEqual([`${firstDate} jess, ted`, `${secondDate} jess, ted`]);
+      });
     });
 
-    test('getReportData should return dates with multiple names if there is multiple customer inputs', () => {
-      expect(getReportData([{
-        name: 'jess', 
-        preference: 'everyday'
-      }, {
-        name: 'ted', 
-        preference: 'everyday'
-      }], amountOfDays, startDate)).toEqual([`${firstDate} jess, ted`, `${secondDate} jess, ted`]);
+    describe('when the customers Preference is Specific days of the week', () => {
+      test('getReportData should take an array of objects and return an array of dates', () => {
+        expect(getReportData([{
+          name: 'jess', 
+          preference: { 
+            type: 'speciific day', 
+            days: ['Saturday']
+          }
+        }], amountOfDays, startDate)).toEqual([`${firstDate} jess`, `${secondDate}`]);
+      });
     });
+
+
     
   });
 
