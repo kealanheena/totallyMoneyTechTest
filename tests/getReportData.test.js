@@ -44,7 +44,7 @@ describe('#getReportData', () => {
   });
 
 
-  describe('When the amount of day is 2', () => {
+  describe('When the amount of days is 2', () => {
     beforeEach(() => {
       amountOfDays = 2;
     });
