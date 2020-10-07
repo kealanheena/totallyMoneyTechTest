@@ -92,7 +92,7 @@ Preference: this has three items:
 
   dates: this only applies if you set the type as date, it is an array of numbers from 1-28.
 
-  days: this only applies if you set the type as day, it is an array of strings which are the days of the week from Monday - Sunday.
+  days: this only applies if you set the type as day, it is an array of strings which are the days of the week from Monday - Sunday (the days are case sensitive they have to be capitalised).
 
 There is also two other variables you can pass to the getReportData function, these were mainly for testing and are opitional and will revert to the default value if not inputted.
 

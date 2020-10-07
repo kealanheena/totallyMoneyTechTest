@@ -87,7 +87,7 @@ describe('#getReportData', () => {
         expect(getReportData([{
           name: 'jess', 
           preference: { 
-            type: 'day', 
+            type: 'day',
             days: ['Saturday', 'Sunday']
           }
         }], amountOfDays, startDate)).toEqual([`${firstDate} jess`, `${secondDate} jess`]);
