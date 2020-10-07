@@ -45,7 +45,8 @@ I would like a list of dates with the people who want to recieve marketing mater
 
 As a User,
 So my customers can choose when the want marketing material,
-I would like to accept customers data in four catergorys On specified dates of the month, Everyday, On specified days of the week and Never.
+I would like to accept customers data in four catergorys 
+On specified dates of the month, Everyday, On specified days of the week and Never.
 ```
 
 ## How to Use
