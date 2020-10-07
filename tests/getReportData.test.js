@@ -53,7 +53,7 @@ describe('#getReportData', () => {
       expect(getReportData([], amountOfDays, startDate)).toEqual([`${firstDate}`, `${secondDate}`]);
     });
 
-    describe('when the customers Preference is Everyday', () => {
+    describe('When the customers Preference is Everyday', () => {
       it('should take an array of customers and return an array of subsequential dates with the names of people getting the marketing info', () => {
         expect(getReportData([{
           name: 'jess', 
@@ -72,7 +72,7 @@ describe('#getReportData', () => {
       });
     });
 
-    describe('when the customers Preference is Specific days of the week', () => {
+    describe('When the customers Preference is Specific days of the week', () => {
       it('should only add the customers name to dates on that day they in their preferences', () => {
         expect(getReportData([{
           name: 'jess', 
@@ -121,7 +121,7 @@ describe('#getReportData', () => {
 
     });
 
-    describe('when the customers Preference is Specific days of the week', () => {
+    describe('When the customers Preference is Specific days of the week', () => {
       it('should only add the customers name to dates in prefernces dates', () => {
         expect(getReportData([{
           name: 'jess', 
@@ -154,7 +154,7 @@ describe('#getReportData', () => {
 
     });
 
-    describe('when each of the customers preference are different', () => {
+    describe('When each of the customers preference are different', () => {
       it('should only add the customers name to days/dates in their prefernces', () => {
         expect(getReportData([{
           name: 'jess', 
