@@ -1,9 +1,18 @@
-const daysKey = require('./daysKey');
+import { daysKey } from './daysKey';
 
-module.exports = function getReportData(customerInputsArray, amountOfDays = 90, date = new Date()) {
+interface CustomerInputsArray {
+  name: string,
+  preference: {
+    type: string,
+    days?: string[],
+    dates?: number[]
+  }
+}
+
+export function getReportData(customerInputsArray: Array<CustomerInputsArray>, amountOfDays: number = 90, date: Date = new Date()) {
   const arrayOfDates = []
   
-  for(i = 0; i < amountOfDays && amountOfDays < 90; i++) {
+  for(let i = 0; i < amountOfDays && amountOfDays < 90; i++) {
       const customerStringsArray = [];
       
       customerInputsArray.forEach((customerInput) => {

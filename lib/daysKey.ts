@@ -1,4 +1,4 @@
-module.exports = [
+export const daysKey = [
   'Sunday',
   'Monday',
   'Tuesday',

@@ -5,7 +5,7 @@ const secondDate = new Date('August 2, 2020 12:15:30').toDateString();
 
 describe('#getReportData', () => {
   let startDate;
-  let amountOfDays
+  let amountOfDays;
   
 
   beforeEach(() => {
@@ -198,9 +198,6 @@ describe('#getReportData', () => {
           }
         }], amountOfDays, startDate)).toEqual([`${firstDate} jess`, `${secondDate} ted`]);
       });
-
     });
-    
   });
-
 });

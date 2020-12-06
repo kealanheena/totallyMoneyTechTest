@@ -1,4 +1,4 @@
-const getReportData = require('./getReportData');
+import { getReportData } from './getReportData';
 
 console.log(getReportData([{
   name: 'A',
